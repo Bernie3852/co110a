@@ -63,3 +63,35 @@ CHIP DMux {
     And(a = in, b = sel, out = b);
 }
 ```  
+## Or (Nand ver)
+```Verilog
+CHIP Or {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    Nand(a = a, b = a, out = L1);
+    Nand(a = b, b = b, out = L2);
+    Nand(a = L1, b = L2, out = out);
+}
+```  
+## Xor (Nand ver)
+```Verilog
+CHIP Xor {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    Nand(a = a, b = a, out = na);
+    Nand(a = b, b = b, out = nb);
+    Nand(a = na, b = nb, out = L1);
+
+    Nand(a = a, b = b, out = L2);
+
+    Nand(a = L1, b = L2, out = L3);
+    Nand(a = L3, b = L3, out = out);
+    
+}
+```  
