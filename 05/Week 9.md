@@ -25,6 +25,7 @@ CHIP Memory {
 
     Mux4Way16(a=O0, b=O1, c=O2, d=O3, sel=address[13..14], out=out);
 }
+```  
 ## Computer
 ```Verilog
 CHIP Computer {
