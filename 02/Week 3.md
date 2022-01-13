@@ -1,3 +1,4 @@
+# Week 3
 ## HalfAdder
 ```Verilog
 CHIP HalfAdder {
